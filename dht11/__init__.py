@@ -20,6 +20,12 @@ class DHT11Result:
 
     def is_valid(self):
         return self.error_code == DHT11Result.ERR_NO_ERROR
+    
+    def is_missing_data(self):
+        return self.error_code == DHT11Result.ERR_MISSING_DATA
+    
+    def is_crc_error(self):
+        return self.error_code == DHT11Result.ERR_CRC
 
 
 class DHT11:
